@@ -20,8 +20,11 @@ pipeline {
         }
         stage("Run Shell Script") {
             steps {
-                sh 'chmod +x build_status.sh'
-                sh './build_status.sh ${env.BUILD_RESULT}'
+                sh '''
+                #!/bin/bash
+                chmod +x build_status.sh
+                ./build_status.sh ${env.BUILD_RESULT}
+                '''
             }
         }
         stage("Archive SUmmary") {
