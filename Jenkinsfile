@@ -26,7 +26,7 @@ pipeline {
         }
         stage("Archive SUmmary") {
             steps {
-                archiveArtifacts artifacts: 'build_summary.txt' onlyIfSuccessful: true
+                archiveArtifacts artifacts: 'build_summary.txt', onlyIfSuccessful: true
             }
         }
     }
